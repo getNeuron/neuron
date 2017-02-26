@@ -11,7 +11,7 @@ The Neuron Project is a decentralized peer-to-peer platform, created under an op
 
 Releases
 ===========================
-[Latest Release - 1.0.0.0](https://github.com/getneuron/neuron/releases/latest)
+[Latest Release - 1.0.0.0](https://getneuron.com)
 
 Supported Operating Systems:
 * Linux (64 bit)
