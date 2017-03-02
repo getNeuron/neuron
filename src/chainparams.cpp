@@ -159,7 +159,9 @@ public:
         nFirstPosv3Block = 120002;
 
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20); // "standard" scrypt target limit for proof of work, results with 0,000244140625 proof-of-work difficulty
-        bnProofOfStakeLimit = CBigNum(~uint256(0) >> 48);
+        bnProofOfStakeLimit = CBigNum(~uint256(0) >> 20);
+		bnProofOfStakeLimitV2 = CBigNum(~uint256(0) >> 48);
+
 
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce   = 2085036;

@@ -68,7 +68,7 @@ public:
     const bool IsProtocolV3(int nHeight) const { return nHeight > nFirstPosv3Block; }
 
     const CBigNum& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
-    const CBigNum& ProofOfStakeLimit(int nHeight) const { return bnProofOfStakeLimit; }
+    const CBigNum& ProofOfStakeLimit(int nHeight) const { return IsProtocolV2(nHeight) ? bnProofOfStakeLimitV2 : bnProofOfStakeLimit; }
 
 
     virtual const CBlock& GenesisBlock() const = 0;
@@ -108,12 +108,14 @@ protected:
     int nFirstPosv3Block;
     CBigNum bnProofOfWorkLimit;
     CBigNum bnProofOfStakeLimit;
+	CBigNum bnProofOfStakeLimitV2;
 
     std::string strDataDir;
     std::vector<CDNSSeedData> vSeeds;
     std::vector<unsigned char> base58Prefixes[MAX_BASE58_TYPES];
     int nLastPOWBlock;
     int nLastFairLaunchBlock;
+	
 };
 
 /**
